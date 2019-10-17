@@ -1,11 +1,35 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+
+    <!--Top level DayNight theme to be used in AndroidManifest.xml-->
+    <style name="AppTheme" parent="Base.MyTheme"/>
+
+    <!--Base custom theme which will be shared between both light and dark theme variants-->
+    <style name="Base.MyTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!--Material color attributes -->
+    <item name="colorPrimary">@color/primaryColor</item>
+    <item name="colorPrimaryVariant">@color/primaryLightColor</item>
+    <item name="colorSecondary">@color/secondaryColor</item>
+    <item name="colorSecondaryVariant">@color/secondaryLightColor</item>
+
+
+    <item name="colorOnPrimary">@color/primaryTextColor</item>
+    <item name="colorOnSecondary">@color/secondaryTextColor</item>
     </style>
 
+    <style name="ProfileSection.TextAppearance.Title" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+    <style name="ProfileSection.TextAppearance.Title.Expanded" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="ProfileSection.Button" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/primaryTextColor</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="iconTint">@color/primaryTextColor</item>
+    </style>
+    <style name="ProfileSection.Button.Icon">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+    </style>
 </resources>
