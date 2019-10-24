@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">My CV app</string>
     <string name="full_name">Łukasz Huculak</string>
+    <string name="skills_title">Skills</string>
+    <string name="experience_title">Experience</string>
+    <string name="ownProjects_title">Own projects</string>
 </resources>
