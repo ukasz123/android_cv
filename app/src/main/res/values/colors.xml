@@ -9,4 +9,5 @@
     <color name="secondaryDarkColor">#ca9b52</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#000000</color>
+    <color name="errorColor">#A64932</color>
 </resources>

@@ -11,6 +11,7 @@
     <item name="colorPrimaryVariant">@color/primaryLightColor</item>
     <item name="colorSecondary">@color/secondaryColor</item>
     <item name="colorSecondaryVariant">@color/secondaryLightColor</item>
+        <item name="colorError">@color/errorColor</item>
 
 
     <item name="colorOnPrimary">@color/primaryTextColor</item>
@@ -31,5 +32,9 @@
     </style>
     <style name="ProfileSection.Button.Icon">
         <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
+    </style>
+
+    <style name="Data.TextAppearance.Error" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">@color/errorColor</item>
     </style>
 </resources>
