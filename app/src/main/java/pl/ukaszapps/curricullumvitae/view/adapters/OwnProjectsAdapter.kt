@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import pl.ukaszapps.curricullumvitae.R
 import pl.ukaszapps.curricullumvitae.view.model.OwnProject
@@ -27,7 +28,7 @@ private class OwnProjectViewHolder(itemView: View) : RecyclerView.ViewHolder(ite
         description.text = value.description
         skillsUsed.removeAllViews()
         value.skillsUsed.forEach {
-            skillsUsed.addView(ImageView(skillsUsed.context).apply { setImageResource(it) })
+            skillsUsed.addView(AppCompatImageView(skillsUsed.context).apply { setImageResource(it) })
         }
     }
 

@@ -1,54 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_gravity="center"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center"
     android:layout_margin="8dp"
-        app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ProgressBar
+        android:id="@+id/skillLevel"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        android:indeterminate="false"
+        android:max="10"
+        android:progress="4"
+        android:progressDrawable="@drawable/bg_circullar_progress"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1.0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ProgressBar
-            android:id="@+id/skillLevel"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:indeterminate="false"
-            android:max="10"
-            android:progress="4"
-            android:progressDrawable="@drawable/bg_circullar_progress"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/skillName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some skill"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skillLevel" />
 
-        <TextView
-            android:id="@+id/skillName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Some skill"
-            app:layout_constraintBottom_toBottomOf="@+id/skillLevel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/skillLevel"
-            app:layout_constraintVertical_bias="0.72" />
+    <ImageView
+        android:id="@+id/skillIcon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@id/skillLevel"
 
-        <ImageView
-            android:id="@+id/skillIcon"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-
-            app:layout_constraintBottom_toTopOf="@+id/skillName"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintStart_toStartOf="@id/skillLevel"
-            app:layout_constraintEnd_toEndOf="@id/skillLevel"
-            app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintEnd_toEndOf="@id/skillLevel"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintDimensionRatio="1.0"
+        app:layout_constraintStart_toStartOf="@id/skillLevel"
+        app:layout_constraintTop_toTopOf="@id/skillLevel"
+        app:srcCompat="@drawable/ic_extension" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

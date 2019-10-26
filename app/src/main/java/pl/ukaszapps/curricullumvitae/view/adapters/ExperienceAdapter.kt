@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import pl.ukaszapps.curricullumvitae.R
 import pl.ukaszapps.curricullumvitae.view.model.Project
@@ -33,7 +35,7 @@ internal class ProjectViewHolder(view: View): RecyclerView.ViewHolder(view), Bin
         company.text = value.company
         skillsGroup.removeAllViews()
         value.skills.forEach {
-            skillsGroup.addView(ImageView(skillsGroup.context).apply { setImageResource(it) })
+            skillsGroup.addView(AppCompatImageView(skillsGroup.context).apply { setImageResource(it) })
         }
     }
 
