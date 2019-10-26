@@ -12,6 +12,7 @@ import pl.ukaszapps.curricullumvitae.R
 import pl.ukaszapps.curricullumvitae.view.model.Skill
 
 class SkillsAdapter(inflater: LayoutInflater) : StateAwareAdapter<Skill>(inflater) {
+
     override fun onCreateDataViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return SkillHolder(inflater.inflate(R.layout.row_skill, parent, false))
     }

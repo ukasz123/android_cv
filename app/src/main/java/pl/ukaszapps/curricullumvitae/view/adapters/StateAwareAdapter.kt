@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import pl.ukaszapps.curricullumvitae.R
 import pl.ukaszapps.curricullumvitae.view.model.Loading
@@ -17,7 +18,7 @@ interface Bindable<T> {
 }
 
 abstract class StateAwareAdapter<T>(protected val inflater: LayoutInflater) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    RecyclerView.Adapter<RecyclerView.ViewHolder>(), Observer<ResultState<List<T>>> {
 
     var state: ResultState<List<T>> = Loading()
     set(value){
@@ -76,6 +77,10 @@ abstract class StateAwareAdapter<T>(protected val inflater: LayoutInflater) :
 
     open fun onBindDataViewHolder(holder: RecyclerView.ViewHolder, item: T) {
 
+    }
+
+    override fun onChanged(t: ResultState<List<T>>?) {
+        state = t ?: Loading()
     }
 
 }

@@ -33,7 +33,16 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.0-alpha01'
     implementation 'androidx.recyclerview:recyclerview:1.1.0-rc01'
 
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-alpha01'
+
     testImplementation 'junit:junit:4.12'
+    // Test helpers for LiveData
+    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
