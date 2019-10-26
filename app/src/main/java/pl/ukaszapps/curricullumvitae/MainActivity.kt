@@ -23,14 +23,7 @@ import pl.ukaszapps.curricullumvitae.view.viewmodel.SkillsViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val repository: CVDataRepository by lazy {
-        CVDataRepository(service = DummyService)
-    }
-    private val viewModelFactory: ViewModelProvider.Factory by lazy {
-        ViewModelFactory(repository)
-    }
-
-    private val viewModelProvider: ViewModelProvider by lazy {
+    internal val viewModelProvider: ViewModelProvider by lazy {
         ViewModelProviders.of(this, viewModelFactory)
     }
 

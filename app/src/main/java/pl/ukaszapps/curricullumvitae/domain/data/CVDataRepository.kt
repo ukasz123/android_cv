@@ -1,5 +1,6 @@
 package pl.ukaszapps.curricullumvitae.domain.data
 
+import kotlinx.coroutines.CoroutineScope
 import pl.ukaszapps.curricullumvitae.domain.model.OwnProjects
 import pl.ukaszapps.curricullumvitae.domain.model.Projects
 import pl.ukaszapps.curricullumvitae.domain.model.Skills

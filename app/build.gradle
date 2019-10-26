@@ -40,6 +40,11 @@ dependencies {
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-alpha01'
 
+    // networking
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.6.0'
+    implementation "com.squareup.moshi:moshi-kotlin:1.8.0"
+
     testImplementation 'junit:junit:4.12'
     // Test helpers for LiveData
     testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
