@@ -5,4 +5,8 @@
     <string name="experience_title">Experience</string>
     <string name="ownProjects_title">Own projects</string>
     <string name="date_now">NOW</string>
+    <string name="label_city">City</string>
+    <string name="label_linkedin">LinkedIn</string>
+    <string name="label_github">GitHub</string>
+    <string name="label_bitbucket">Bitbucket</string>
 </resources>

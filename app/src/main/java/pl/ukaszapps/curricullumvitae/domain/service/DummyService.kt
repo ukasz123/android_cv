@@ -38,4 +38,13 @@ object DummyService : Service {
         )
     }
 
+    override suspend fun getContactInfo(): ContactInfo {
+        return ContactInfo(
+            address = "Warsaw, Poland",
+            github = "https://github.com",
+            bitbucket = "https://bitbucket.org",
+            linkedin = "https://www.linkedin.com"
+        )
+    }
+
 }

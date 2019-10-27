@@ -11,6 +11,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import pl.ukaszapps.curricullumvitae.R
 import pl.ukaszapps.curricullumvitae.view.model.OwnProject
+import pl.ukaszapps.curricullumvitae.view.showUrl
 
 class OwnProjectsAdapter(inflater: LayoutInflater) : StateAwareAdapter<OwnProject>(inflater) {
     override fun onCreateDataViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -30,14 +31,7 @@ private class OwnProjectViewHolder(itemView: View) : RecyclerView.ViewHolder(ite
 
     override fun bind(value: OwnProject) {
         itemView.setOnClickListener { v ->
-            value.url?.let {
-                val webpage = Uri.parse(it)
-                val intent = Intent(Intent.ACTION_VIEW, webpage)
-                if (intent.resolveActivity(v.context.packageManager) != null) {
-                    v.context.startActivity(intent)
-                }
-
-            }
+            v.context.showUrl(value.url)
         }
         name.text = value.name
         description.text = value.description

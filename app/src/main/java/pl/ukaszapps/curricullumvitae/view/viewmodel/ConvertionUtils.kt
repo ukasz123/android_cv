@@ -1,7 +1,13 @@
 package pl.ukaszapps.curricullumvitae.view.viewmodel
 
 import androidx.annotation.DrawableRes
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.map
 import pl.ukaszapps.curricullumvitae.R
+import pl.ukaszapps.curricullumvitae.view.model.Error
+import pl.ukaszapps.curricullumvitae.view.model.Loading
+import pl.ukaszapps.curricullumvitae.view.model.ResultState
+import pl.ukaszapps.curricullumvitae.view.model.Value
 
 @DrawableRes
 internal fun String?.toSkillResource(): Int {
@@ -21,4 +27,14 @@ internal fun String?.toSkillResource(): Int {
             else -> null
         }
     } ?: R.drawable.ic_extension
+}
+
+
+
+inline fun <T,R> LiveData<ResultState<T>>.mapValue(crossinline transform: (T)->R) = this.map {
+    when(it){
+        is Loading -> Loading<R>()
+        is Error -> Error<R>(errorMessage = it.errorMessage)
+        is Value -> Value(transform(it.value))
+    }
 }
