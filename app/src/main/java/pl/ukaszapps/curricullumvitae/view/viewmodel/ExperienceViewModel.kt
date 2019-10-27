@@ -3,13 +3,8 @@ package pl.ukaszapps.curricullumvitae.view.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import kotlinx.coroutines.delay
 import pl.ukaszapps.curricullumvitae.domain.data.CVDataRepository
-import pl.ukaszapps.curricullumvitae.view.model.Error
-import pl.ukaszapps.curricullumvitae.view.model.Loading
-import pl.ukaszapps.curricullumvitae.view.model.Project
-import pl.ukaszapps.curricullumvitae.view.model.ResultState
-import pl.ukaszapps.curricullumvitae.view.model.Value
+import pl.ukaszapps.curricullumvitae.view.model.*
 
 class ExperienceViewModel(private val repository: CVDataRepository) : ViewModel() {
     val experience: LiveData<ResultState<List<Project>>> = liveData {
@@ -17,13 +12,13 @@ class ExperienceViewModel(private val repository: CVDataRepository) : ViewModel(
         try {
             val data = repository.getProjects()
             emit(
-                Value(
+                Value( 
                     data.projects.map {
                         Project(
                             name = it.name,
                             from = it.from,
                             to = it.to,
-                            skills = it.skillsUsed.map { skillName -> skillName.toSkillResource() },
+                            skills = it.skillsUsed.map { skillName -> skillName.toSkillResource() }.filterNot { it == SKILL_PLACEHOLDER },
                             company = it.company
                         )
                     }

@@ -9,6 +9,8 @@ import pl.ukaszapps.curricullumvitae.view.model.Loading
 import pl.ukaszapps.curricullumvitae.view.model.ResultState
 import pl.ukaszapps.curricullumvitae.view.model.Value
 
+internal const val SKILL_PLACEHOLDER = R.drawable.ic_extension;
+
 @DrawableRes
 internal fun String?.toSkillResource(): Int {
     return this?.let {
@@ -26,7 +28,7 @@ internal fun String?.toSkillResource(): Int {
             "css", "css3" -> R.drawable.ic_css3
             else -> null
         }
-    } ?: R.drawable.ic_extension
+    } ?: SKILL_PLACEHOLDER
 }
 
 
