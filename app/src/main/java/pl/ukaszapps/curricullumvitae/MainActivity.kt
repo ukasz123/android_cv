@@ -3,10 +3,7 @@ package pl.ukaszapps.curricullumvitae
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.observe
+import androidx.lifecycle.*
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -91,19 +88,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bindSocialButton(button: MaterialButton, urlLiveData: LiveData<ResultState<String>>) {
-        urlLiveData.observe(owner = this){ resultState ->
-            when (resultState) {
-                is Value -> {
-                    button.isEnabled = true
-                    button.setOnClickListener {
-                        showUrl(resultState.value)
+        urlLiveData.observe(this,
+            Observer<ResultState<String>> { resultState ->
+                when (resultState) {
+                    is Value -> {
+                        button.isEnabled = true
+                        button.setOnClickListener {
+                            showUrl(resultState.value)
+                        }
+                    }
+                    else -> {
+                        button.isEnabled = false
+                        button.setOnClickListener(null)
                     }
                 }
-                else -> {
-                    button.isEnabled = false
-                    button.setOnClickListener(null)
-                }
-            }
-        }
+            })
     }
 }
