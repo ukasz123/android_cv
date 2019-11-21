@@ -10,12 +10,12 @@ import pl.ukaszapps.curricullumvitae.view.model.ResultState
 import pl.ukaszapps.curricullumvitae.view.model.Value
 
 class ContactDataViewModel(private val repository: CVDataRepository) : ViewModel() {
-    private val infoLiveData = liveData<ResultState<ContactInfo>> {
+    val infoLiveData = liveData<ResultState<ContactInfo>> {
         emit(Loading())
         try {
             emit(Value(repository.getContactInfo()))
         } catch (e: Exception) {
-            emit(Error(errorMessage = "Unable to retrieve data"))
+            emit(Error(errorMessage = "Unable to retrieve data\n${e.message}"))
         }
     }
 
